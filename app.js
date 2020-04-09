@@ -1,3 +1,5 @@
+
+const tasks = require('./routes/tasks')
 require('./store').init()
 const Koa = require('koa')
 const app = new Koa()
@@ -17,6 +19,7 @@ onerror(app)
 app.use(bodyparser({
   enableTypes:['json', 'form', 'text']
 }))
+app.use(tasks.routes(), tasks.allowedMethods())
 app.use(json())
 app.use(logger())
 app.use(require('koa-static')(__dirname + '/public'))
