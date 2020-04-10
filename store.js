@@ -11,7 +11,11 @@ const init = async () => (
     })
   })
 )
-
+module.exports = {
+  init,
+  createTask,
+  listTasks
+}
 
 
 const createTask = async (title) => (
