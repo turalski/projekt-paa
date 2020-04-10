@@ -46,5 +46,5 @@ const listTasks = async () => (
 module.exports = {
   init,
   createTask,
-  listTask
+  listTasks
 }
